@@ -8,6 +8,7 @@ from collections import defaultdict
 from afk_checks.voice_tracker import VoiceTracker
 from afk_checks.activity_tracker import get_activity_data
 import json
+import requests
 
 
 # Constants
@@ -61,7 +62,7 @@ def main():
     new_map = defaultdict(int)
 
     tracker = VoiceTracker()
-    
+    eye_tracker.start_eye_tracking()
     currntTime = 0
 
     while True:
@@ -96,12 +97,33 @@ def main():
             print(my_map)  # Print structured data
             print(new_map)  # Print new activity summary
             
+            # Prepare the payload combining both maps
+            payload = {
+                "employee_id": EMPLOYEE_ID,
+                "timestamp": datetime.datetime.now().isoformat(),
+                "window_activity": dict(my_map),  # Convert defaultdict to regular dict
+                "activity_summary": dict(new_map)  # Convert defaultdict to regular dict
+            }
+            
+            # Send the data via POST request
+            try:
+                response = requests.post(
+                    f"http://localhost:5000/employee/{EMPLOYEE_ID}",  # Replace with your actual API endpoint
+                    json=payload,
+                    headers={"Content-Type": "application/json"}
+                )
+                print(f"Data sent to server. Status code: {response.status_code}")
+                if response.status_code != 200:
+                    print(f"Error response: {response.text}")
+            except Exception as e:
+                print(f"Failed to send data: {e}")
+            
             # ✅ Reset maps while keeping the structure intact
-            my_map = defaultdict(lambda: {"time_spent": 0, "activities": defaultdict(int)})
+            my_map = defaultdict(lambda: {
+            "time_spent": 0, 
+            "activities": defaultdict(lambda: {"count": 0, "text": ""})
+            })
             new_map = defaultdict(int)
-        
-        
-
         
 
 if __name__ == "__main__":
