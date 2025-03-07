@@ -1,11 +1,14 @@
 # flask_server.py
 from flask import Flask, jsonify
+from flask_cors import CORS
 import json
 import os
 from flask import request
 from datetime import datetime
 
 app = Flask(__name__)
+
+CORS(app)
 
 @app.route('/employee/<employee_id>', methods=['GET'])
 def get_state_times(employee_id):
