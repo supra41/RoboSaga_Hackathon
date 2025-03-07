@@ -136,6 +136,8 @@ def detect_eyes():
     print(f"Total Eyes Open: {eyes_open} frames ({open_time:.1f} seconds)")
     print(f"Total Eyes Closed: {eyes_closed} frames ({closed_time:.1f} seconds)")
     print(f"Total Away Time: {eyes_not_detected} frames ({away_time:.1f} seconds)")
+    
+    
 
     cap.release()
     cv2.destroyAllWindows()
