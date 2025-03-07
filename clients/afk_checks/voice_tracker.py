@@ -74,16 +74,3 @@ class VoiceTracker:
         self.stream.stop_stream()
         self.stream.close()
         self.audio.terminate()
-
-
-if __name__ == "__main__":
-    tracker = VoiceTracker()
-    try:
-        while True:
-            status = tracker.get_speaking_status()
-            print(f"Status: {status}")  # 0 if talking, -1 if not
-            time.sleep(1)  # Fetch data every second
-    except KeyboardInterrupt:
-        print("Stopped.")
-    finally:
-        tracker.close()
