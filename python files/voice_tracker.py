@@ -19,15 +19,13 @@ class VoiceTracker:
         self.CHANNELS = 1
         self.RATE = 16000
         self.CHUNK = 1024
-        self.NORMAL_SPEECH_THRESHOLD = 15  # Threshold for normal speech
-        self.SHOUTING_THRESHOLD = 45      # Threshold for shouting
-        self.SILENCE_LIMIT = 2
-        self.MIN_CALL_DURATION = 5
-        self.BACKGROUND_NOISE_WINDOW = 30
-        
+        self.THRESHOLD = 20  # Adjust dynamically later
+        self.SILENCE_LIMIT = 2  # Seconds of silence to end conversation
+        self.MIN_CALL_DURATION = 5  # Minimum seconds to consider a call
+        self.BACKGROUND_NOISE_WINDOW = 30  # Number of samples for noise adaptation
+
         # State tracking
         self.is_speaking = False
-        self.is_shouting = False
         self.silence_start = None
         self.conversation_start = None
         self.background_noise_levels = collections.deque(maxlen=self.BACKGROUND_NOISE_WINDOW)
@@ -45,10 +43,8 @@ class VoiceTracker:
         """Dynamically adjust the threshold based on background noise levels"""
         if self.background_noise_levels:
             avg_noise = np.mean(self.background_noise_levels)
-            normal_threshold = max(avg_noise + 10, self.NORMAL_SPEECH_THRESHOLD)
-            shouting_threshold = max(avg_noise + 35, self.SHOUTING_THRESHOLD)
-            return normal_threshold, shouting_threshold
-        return self.NORMAL_SPEECH_THRESHOLD, self.SHOUTING_THRESHOLD
+            return max(avg_noise * 2, 10)  # Ensure a minimum threshold
+        return self.THRESHOLD  # Default threshold if no data
 
     def start_tracking(self):
         """Start tracking voice activity and possible calls"""
@@ -70,24 +66,16 @@ class VoiceTracker:
 
                 # Update background noise level
                 self.background_noise_levels.append(energy)
-                dynamic_normal_threshold, dynamic_shouting_threshold = self._adapt_threshold()
-                
-                # Voice detection with shouting detection
-                if energy > dynamic_shouting_threshold:
-                    voice_state = "shouting"
-                elif energy > dynamic_normal_threshold:
-                    voice_state = "speaking"
-                else:
-                    voice_state = None
+                dynamic_threshold = self._adapt_threshold()
 
                 # Voice detected
-                if voice_state:
+                if energy > dynamic_threshold:
                     if not self.is_speaking:
                         self.conversation_start = time.time()
                         self.is_speaking = True
                         current_time = datetime.datetime.now().strftime("%H:%M:%S")
-                        print(f"Voice detected ({voice_state}) at {current_time}")
-                        logging.info(f"Voice activity started - {voice_state}")
+                        print(f"Voice detected at {current_time}")
+                        logging.info(f"Voice activity started")
 
                     # Reset silence timer
                     self.silence_start = None

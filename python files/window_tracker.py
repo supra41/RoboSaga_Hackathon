@@ -1,7 +1,8 @@
 import pyautogui
 from pywinauto import Application
+from time import sleep
 
-def getActiveWindow():
+def get_active_window():
     active_window = pyautogui.getActiveWindow()
     if active_window:
         return active_window.title
@@ -23,5 +24,3 @@ def get_chrome_tabs():
     except Exception as e:
         print("Error:", e)
         return []
-    
-get_chrome_tabs()
