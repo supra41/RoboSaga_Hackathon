@@ -10,11 +10,25 @@ app = Flask(__name__)
 @app.route('/employee/<employee_id>', methods=['GET'])
 def get_state_times(employee_id):
     """Returns the open, closed, and away times for a specific employee."""
-    # Access the times from the eye detection module for the given employee_id
-    return jsonify({
-        'employee_id': employee_id,
-        'hello': 'world'
-    })
+    # Create a filename for storing employee data
+    filename = "employee_data.json"
+        
+    # Check if the file exists and load data
+    if os.path.exists(filename):
+        with open(filename, 'r') as file:
+            try:
+                employee_data = json.load(file)
+            except json.JSONDecodeError:
+                return jsonify({"status": "error", "message": "Invalid data format"}), 400
+    else:
+        return jsonify({"status": "error", "message": "No employee data found"}), 404
+        
+    # Check if the employee exists in the data
+    if employee_id not in employee_data:
+        return jsonify({"status": "error", "message": f"Employee {employee_id} not found"}), 404
+        
+    # Return the employee data
+    return jsonify({"status": "success", "data": employee_data[employee_id]})
     
 @app.route('/employee/<employee_id>', methods=['POST'])
 def update_employee_data(employee_id):
