@@ -15,7 +15,7 @@ const COLORS = ['#4CAF50', '#F44336'];
 const calculateProductivity = (activitySummary) => {
   let { NOT_SPEAKING, SPEAKING, eyes_open_time } = activitySummary;
   NOT_SPEAKING = activitySummary['NOT SPEAKING'];
-  const x =  (SPEAKING + eyes_open_time) / (SPEAKING + NOT_SPEAKING + eyes_open_time) * 100;
+  const x =  (NOT_SPEAKING + eyes_open_time) / (SPEAKING + NOT_SPEAKING + eyes_open_time+eyes_closed_time +eyes_not_detected_time) * 100;
   console.log(x);
   return x;
 };

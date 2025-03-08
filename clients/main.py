@@ -93,7 +93,7 @@ def main():
 
         currntTime += 1
         print(currntTime)
-        if currntTime % 60 == 0:
+        if currntTime % 30 == 0:
             print(my_map)  # Print structured data
             print(new_map)  # Print new activity summary
             

@@ -744,6 +744,297 @@
                 "eyes_not_detected_time": 0,
                 "NOT SPEAKING": 60
             }
+        },
+        "2025-03-08T11:44:14.611161": {
+            "employee_id": 1,
+            "timestamp": "2025-03-08T11:44:12.545732",
+            "window_activity": {
+                "Eye Tracking": {
+                    "time_spent": 4,
+                    "activities": {
+                        "keyboard_activity": {
+                            "count": 0,
+                            "text": ""
+                        },
+                        "mouse_movement_distance": {
+                            "count": 1996,
+                            "text": ""
+                        },
+                        "mouse_clicks": {
+                            "count": 0,
+                            "text": ""
+                        },
+                        "mouse_scrolls": {
+                            "count": 0,
+                            "text": ""
+                        }
+                    }
+                },
+                "WhatsApp": {
+                    "time_spent": 3,
+                    "activities": {
+                        "keyboard_activity": {
+                            "count": 0,
+                            "text": ""
+                        },
+                        "mouse_movement_distance": {
+                            "count": 598,
+                            "text": ""
+                        },
+                        "mouse_clicks": {
+                            "count": 3,
+                            "text": ""
+                        },
+                        "mouse_scrolls": {
+                            "count": 0,
+                            "text": ""
+                        }
+                    }
+                },
+                "main.py - RoboSaga - Visual Studio Code": {
+                    "time_spent": 2,
+                    "activities": {
+                        "keyboard_activity": {
+                            "count": 0,
+                            "text": ""
+                        },
+                        "mouse_movement_distance": {
+                            "count": 1424,
+                            "text": ""
+                        },
+                        "mouse_clicks": {
+                            "count": 0,
+                            "text": ""
+                        },
+                        "mouse_scrolls": {
+                            "count": 0,
+                            "text": ""
+                        }
+                    }
+                },
+                "Vite + React and 13 more pages - Personal - Microsoft\u200b Edge": {
+                    "time_spent": 36,
+                    "activities": {
+                        "keyboard_activity": {
+                            "count": 0,
+                            "text": "shfdshg"
+                        },
+                        "mouse_movement_distance": {
+                            "count": 10259,
+                            "text": ""
+                        },
+                        "mouse_clicks": {
+                            "count": 4,
+                            "text": ""
+                        },
+                        "mouse_scrolls": {
+                            "count": 0,
+                            "text": ""
+                        }
+                    }
+                },
+                "C:\\Windows\\System32\\cmd.exe": {
+                    "time_spent": 3,
+                    "activities": {
+                        "keyboard_activity": {
+                            "count": 0,
+                            "text": ""
+                        },
+                        "mouse_movement_distance": {
+                            "count": 1725,
+                            "text": ""
+                        },
+                        "mouse_clicks": {
+                            "count": 2,
+                            "text": ""
+                        },
+                        "mouse_scrolls": {
+                            "count": 51,
+                            "text": ""
+                        }
+                    }
+                },
+                "Inference manager feedback warning - Google Chrome": {
+                    "time_spent": 12,
+                    "activities": {
+                        "keyboard_activity": {
+                            "count": 0,
+                            "text": ""
+                        },
+                        "mouse_movement_distance": {
+                            "count": 2522,
+                            "text": ""
+                        },
+                        "mouse_clicks": {
+                            "count": 1,
+                            "text": ""
+                        },
+                        "mouse_scrolls": {
+                            "count": 0,
+                            "text": ""
+                        }
+                    }
+                }
+            },
+            "activity_summary": {
+                "eyes_open_time": 39,
+                "eyes_closed_time": 0,
+                "eyes_not_detected_time": 0,
+                "NOT SPEAKING": 53,
+                "SPEAKING": 7
+            }
+        },
+        "2025-03-08T11:45:16.746955": {
+            "employee_id": 1,
+            "timestamp": "2025-03-08T11:45:14.684342",
+            "window_activity": {
+                "Vite + React and 13 more pages - Personal - Microsoft\u200b Edge": {
+                    "time_spent": 38,
+                    "activities": {
+                        "keyboard_activity": {
+                            "count": 0,
+                            "text": "gdsfdsgjhfgdsjhfgdshjfghsdfgdshfjashgfhfgasjhdfgsdjhfdjgjfgfdsghjgfsdkfgdshgfhfdsffsfhsjkdfsdgafhdsgsdfkhdsfkgfgsdfffsdjgfsdjbfjvsdfvsjhfhasdfgsdhfsgdkhfgsdfgkdfkgsdfsdgkvsejfgdsgvsdkfggvsdgkfgksdgfsdfgygvsddddddddddgsdyugdsgdsghvgsdfgdsgfdgfsdgfgdddgdggdsfgdsfhsdfgkksdfdskgfgdskfdshkjfdhfsdkfsdgsdkfsdhfgksdhfsdgfsdhfgsdhkgfdsgvdsgvdsvghdfsgkdsgdfvsgfdsdshgdgfsdgkd"
+                        },
+                        "mouse_movement_distance": {
+                            "count": 2342,
+                            "text": ""
+                        },
+                        "mouse_clicks": {
+                            "count": 0,
+                            "text": ""
+                        },
+                        "mouse_scrolls": {
+                            "count": 0,
+                            "text": ""
+                        }
+                    }
+                },
+                "main.py - RoboSaga - Visual Studio Code": {
+                    "time_spent": 22,
+                    "activities": {
+                        "keyboard_activity": {
+                            "count": 0,
+                            "text": ""
+                        },
+                        "mouse_movement_distance": {
+                            "count": 2838,
+                            "text": ""
+                        },
+                        "mouse_clicks": {
+                            "count": 1,
+                            "text": ""
+                        },
+                        "mouse_scrolls": {
+                            "count": 0,
+                            "text": ""
+                        }
+                    }
+                }
+            },
+            "activity_summary": {
+                "eyes_open_time": 67,
+                "eyes_closed_time": 0,
+                "eyes_not_detected_time": 0,
+                "NOT SPEAKING": 59,
+                "SPEAKING": 1
+            }
+        },
+        "2025-03-08T11:46:18.865566": {
+            "employee_id": 1,
+            "timestamp": "2025-03-08T11:46:16.815122",
+            "window_activity": {
+                "main.py - RoboSaga - Visual Studio Code": {
+                    "time_spent": 20,
+                    "activities": {
+                        "keyboard_activity": {
+                            "count": 0,
+                            "text": ""
+                        },
+                        "mouse_movement_distance": {
+                            "count": 952,
+                            "text": ""
+                        },
+                        "mouse_clicks": {
+                            "count": 2,
+                            "text": ""
+                        },
+                        "mouse_scrolls": {
+                            "count": 0,
+                            "text": ""
+                        }
+                    }
+                },
+                "App.css - RoboSaga - Visual Studio Code": {
+                    "time_spent": 23,
+                    "activities": {
+                        "keyboard_activity": {
+                            "count": 0,
+                            "text": ""
+                        },
+                        "mouse_movement_distance": {
+                            "count": 2772,
+                            "text": ""
+                        },
+                        "mouse_clicks": {
+                            "count": 10,
+                            "text": ""
+                        },
+                        "mouse_scrolls": {
+                            "count": 0,
+                            "text": ""
+                        }
+                    }
+                },
+                "employee_data.json - RoboSaga - Visual Studio Code": {
+                    "time_spent": 6,
+                    "activities": {
+                        "keyboard_activity": {
+                            "count": 0,
+                            "text": ""
+                        },
+                        "mouse_movement_distance": {
+                            "count": 435,
+                            "text": ""
+                        },
+                        "mouse_clicks": {
+                            "count": 2,
+                            "text": ""
+                        },
+                        "mouse_scrolls": {
+                            "count": 0,
+                            "text": ""
+                        }
+                    }
+                },
+                "EmployeeDetail.jsx - RoboSaga - Visual Studio Code": {
+                    "time_spent": 11,
+                    "activities": {
+                        "keyboard_activity": {
+                            "count": 0,
+                            "text": ""
+                        },
+                        "mouse_movement_distance": {
+                            "count": 623,
+                            "text": ""
+                        },
+                        "mouse_clicks": {
+                            "count": 1,
+                            "text": ""
+                        },
+                        "mouse_scrolls": {
+                            "count": 0,
+                            "text": ""
+                        }
+                    }
+                }
+            },
+            "activity_summary": {
+                "eyes_open_time": 0,
+                "eyes_closed_time": 0,
+                "eyes_not_detected_time": 0,
+                "NOT SPEAKING": 58,
+                "SPEAKING": 2
+            }
         }
     }
 }
