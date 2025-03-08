@@ -137,17 +137,46 @@ export default function EmployeeDetail() {
               <Bar dataKey="keyboardActivity" fill="#82ca9d" name="Keyboard Activity" />
             </BarChart>
           </ResponsiveContainer>
-          <ResponsiveContainer width="100%" height={250}>
-            <PieChart>
-              <Pie data={windowMouseData} dataKey="mouseClicks" nameKey="window" cx="50%" cy="50%" outerRadius={80} fill="#8884d8" label>
-                {windowMouseData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                ))}
-              </Pie>
-              <Tooltip />
-              <Legend />
-            </PieChart>
-          </ResponsiveContainer>
+          <div className="flex flex-col items-center">
+  {/* Scrollable Legend Container */}
+  <div className="h-40 overflow-y-auto border border-gray-300 rounded-lg p-2 w-72 bg-white shadow-md">
+    <h3 className="text-center text-sm font-semibold mb-2">Mouse Clicks per Window</h3>
+    <ul>
+      {windowMouseData.map((entry, index) => (
+        <li key={index} className="text-sm text-gray-700 flex items-center">
+          <span 
+            className="inline-block w-4 h-4 mr-2 rounded-full" 
+            style={{ backgroundColor: COLORS[index % COLORS.length] }}
+          ></span>
+          {entry.window}
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  {/* Pie Chart Without Labels */}
+  <ResponsiveContainer width={300} height={250}>
+    <PieChart>
+      <Pie 
+        data={windowMouseData} 
+        dataKey="mouseClicks" 
+        nameKey="window" 
+        cx="50%" 
+        cy="50%" 
+        outerRadius={90} 
+        innerRadius={40}
+        fill="#8884d8"
+      >
+        {windowMouseData.map((entry, index) => (
+          <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+        ))}
+      </Pie>
+      <Tooltip />
+    </PieChart>
+  </ResponsiveContainer>
+</div>
+
+
         </div>
       </div>
     </div>
